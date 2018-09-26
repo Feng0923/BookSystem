@@ -1,0 +1,105 @@
+
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>购买书籍</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="boostrap/bootstrap.css">
+    <script src="boostrap/bootstrap.js"></script>
+    <script src="jquery-3.3.1.min.js"></script>
+
+</head>
+<body>
+<div id="mainbox">
+    <ul class="nav nav-pills">
+        <li role="presentation"class="active" ><a href="admin_bookList.jsp">上架书籍情况</a></li>
+        <li role="presentation" ><a href="admin_insert.jsp">录入图书</a></li>
+        <li role="presentation"><a href="admin_order.jsp">订单详情</a></li>
+        <li role="presentation"><a href="admin_suggestion.jsp">客户反馈</a></li>
+        <li role="presentation"><a href="admin_discount.jsp">折扣管理</a></li>
+        <li role="presentation"  ><a href="admin_market.jsp">销售情况</a></li>
+
+        <li role="presentation"><a href="user_login.jsp">退出登录</a></li>
+    </ul>
+    <div id="content" style="margin-left: 10px">
+        <div class="form-inline "style="margin-top: 20px " >
+            <div class="form-group">
+                <span class="glyphicon glyphicon-barcode" aria-hidden="true"/>
+                <input type="text" class="form-control"name="isbn" id="isbn" placeholder="ISBN">
+            </div>
+            <div class="form-group">
+                <span class="glyphicon glyphicon-book" aria-hidden="true"/>
+                <input type="text" class="form-control"name="title" id="title" placeholder="书名">
+            </div>
+            <div class="form-group">
+                <span class="glyphicon glyphicon-user" aria-hidden="true"/>
+                <input type="text" class="form-control" name="author" id="author" placeholder="作者">
+            </div>
+            <button onclick="getData()" class="btn btn-default" ><span class="glyphicon glyphicon-search" aria-hidden="true"/> </button>
+        </div>
+
+        <table  class="table table-bordered" style="margin-top: 20px">
+            <tr>
+                <th>ISBN</th>
+                <th>书名</th>
+                <th>作者</th>
+                <th>价格</th>
+                <th>剩余量</th>
+            </tr>
+            <tbody id="booklist">
+
+            </tbody>
+        </table>
+
+    </div>
+    <script type="text/javascript">
+        function insert(result) {
+            for(var i = 0;i<result.length;i++){
+                var isbn = result[i].isbn;
+                var title = result[i].title;
+                var author = result[i].author;
+                var prize = result[i].prize;
+                var rest = result[i].rest;
+                $("#booklist").append("<tr><td>"+isbn+"</td><td>"+title+"</td><td>"+author+"</td><td>"+prize+"</td><td>"+ rest+"</td></tr>")
+            }
+        }
+        $.ajax({
+            url:"/bookList",
+            data:{
+                "request":"all"
+            },
+            type:"post",
+            dataType:"json",
+            success:function (result) {
+                insert(result);
+            },
+
+        });
+
+
+        function getData() {
+            var isbn = $("#isbn").val();
+            var title = $("#title").val();
+            var author = $("#author").val();
+            $.ajax({
+                url:"/bookList",
+                type:"post",
+                data:{
+                    "request":"search",
+                    "isbn":isbn,
+                    "title":title,
+                    "author": author
+                },
+                dataType:"json",
+                success:function (result) {
+                    $("#booklist").empty();
+                    insert(result);
+                }
+            })
+        }
+    </script>
+</div>
+
+</body>
+</html>

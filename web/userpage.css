@@ -1,0 +1,58 @@
+#mainbox{
+    margin: 0 10px;
+    width: 100%;
+    text-align: left;
+}
+
+#navsidebar{
+    float: left;
+    width: 130px;
+    padding-left: 10px;
+}
+
+#content{
+    width: 60%;    padding: 5px;
+    margin-left: 200px;
+
+}
+
+#nav_list{
+    width: 90px;
+    float: left;
+    margin-left: 10px;
+}
+
+#record{
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid black;
+    margin-top: 20px;
+}
+#record  td,th{
+    border: 1px solid black;
+}
+#information_table{
+    margin-top: 10px ;
+}
+
+#search_table{
+    margin-top: 15px ;
+    border-collapse: collapse;
+    border: 0px;
+}
+#search_table tr,td{
+    border: 0px;
+    align: right;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+}
+
+#result_table td{
+    border: 1px solid #000000;
+}
+#result_table tr,td{
+    text-align: center;
+
+}
