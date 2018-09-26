@@ -65,7 +65,7 @@
     <div class="form-group">
         <label for="ad" class="col-sm-2 control-label"><span style="margin-right: 10px" class="glyphicon glyphicon-home" aria-hidden="true"></span>地址:</label>
         <div id="ad">
-            <div class="col-md-3">x
+            <div class="col-md-3">
                 <select id="province" name="province" class="selectpicker"onchange="selectprovince(this);" data-live-search="true"></select>
             </div>
             <div class="col-md-3">
