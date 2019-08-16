@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="booksystem@localhost">
-  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.7">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.15">
     <root id="1">
       <DefaultCasing>lower/lower</DefaultCasing>
     </root>
     <schema id="2" parent="1" name="booksystem">
       <Current>1</Current>
-      <Visible>1</Visible>
       <Collation>utf8_general_ci</Collation>
+      <Visible>1</Visible>
     </schema>
     <schema id="3" parent="1" name="information_schema">
       <Collation>utf8_general_ci</Collation>
+      <Substituted>1</Substituted>
     </schema>
     <schema id="4" parent="1" name="mysql">
       <Collation>utf8_general_ci</Collation>
@@ -929,25 +930,25 @@
     </table>
     <column id="235" parent="229" name="id">
       <Position>1</Position>
-      <DataType>varchar(32)|0</DataType>
+      <DataType>varchar(32)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="236" parent="229" name="password">
       <Position>2</Position>
-      <DataType>varchar(32)|0</DataType>
+      <DataType>varchar(32)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="237" parent="229" name="name">
       <Position>3</Position>
-      <DataType>varchar(45)|0</DataType>
+      <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="238" parent="229" name="phone">
       <Position>4</Position>
-      <DataType>varchar(11)|0</DataType>
+      <DataType>varchar(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <key id="239" parent="229" name="PRIMARY">
@@ -957,32 +958,32 @@
     </key>
     <column id="240" parent="230" name="isbn">
       <Position>1</Position>
-      <DataType>varchar(16)|0</DataType>
+      <DataType>varchar(16)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="241" parent="230" name="title">
       <Position>2</Position>
-      <DataType>varchar(45)|0</DataType>
+      <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="242" parent="230" name="author">
       <Position>3</Position>
-      <DataType>varchar(32)|0</DataType>
+      <DataType>varchar(32)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="243" parent="230" name="prize">
       <Position>4</Position>
-      <DataType>decimal(6,2)|0</DataType>
+      <DataType>decimal(6,2 digit)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0.00&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="244" parent="230" name="rest">
       <Position>5</Position>
-      <DataType>int(5)|0</DataType>
+      <DataType>int(5)|0s</DataType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
@@ -993,13 +994,13 @@
     </key>
     <column id="246" parent="231" name="level">
       <Position>1</Position>
-      <DataType>int(1)|0</DataType>
+      <DataType>int(1)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="247" parent="231" name="discount_size">
       <Position>2</Position>
-      <DataType>decimal(3,2)|0</DataType>
+      <DataType>decimal(3,2 digit)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
@@ -1010,44 +1011,44 @@
     </key>
     <column id="249" parent="232" name="user_id">
       <Position>1</Position>
-      <DataType>varchar(32)|0</DataType>
+      <DataType>varchar(32)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="250" parent="232" name="isbn">
       <Position>2</Position>
-      <DataType>varchar(45)|0</DataType>
+      <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="251" parent="232" name="time">
       <Position>3</Position>
-      <DataType>datetime|0</DataType>
+      <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="252" parent="232" name="state">
       <Position>4</Position>
-      <DataType>int(1)|0</DataType>
+      <DataType>int(1)|0s</DataType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="253" parent="232" name="order_number">
       <Position>5</Position>
-      <DataType>varchar(50)|0</DataType>
+      <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="254" parent="232" name="count">
       <Position>6</Position>
-      <DataType>int(6)|0</DataType>
+      <DataType>int(6)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;1&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="255" parent="232" name="amount">
       <Position>7</Position>
-      <DataType>decimal(6,2)|0</DataType>
+      <DataType>decimal(6,2 digit)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
@@ -1076,13 +1077,13 @@
     </foreign-key>
     <column id="261" parent="233" name="user_id">
       <Position>1</Position>
-      <DataType>varchar(32)|0</DataType>
+      <DataType>varchar(32)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="262" parent="233" name="content">
       <Position>2</Position>
-      <DataType>varchar(500)|0</DataType>
+      <DataType>varchar(500)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <key id="263" parent="233" name="PRIMARY">
@@ -1098,51 +1099,51 @@
     </foreign-key>
     <column id="265" parent="234" name="id">
       <Position>1</Position>
-      <DataType>varchar(32)|0</DataType>
+      <DataType>varchar(32)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="266" parent="234" name="password">
       <Position>2</Position>
-      <DataType>varchar(32)|0</DataType>
+      <DataType>varchar(32)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="267" parent="234" name="name">
       <Position>3</Position>
-      <DataType>varchar(45)|0</DataType>
+      <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="268" parent="234" name="money">
       <Position>4</Position>
-      <DataType>decimal(9,2)|0</DataType>
+      <DataType>decimal(9,2 digit)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;100.00&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="269" parent="234" name="address">
       <Position>5</Position>
-      <DataType>varchar(45)|0</DataType>
+      <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="270" parent="234" name="level">
       <Position>6</Position>
-      <DataType>int(1)|0</DataType>
+      <DataType>int(1)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;2&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="271" parent="234" name="phone">
       <Position>7</Position>
-      <DataType>varchar(11)|0</DataType>
+      <DataType>varchar(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="272" parent="234" name="usercol">
       <Position>8</Position>
-      <DataType>varchar(45)|0</DataType>
+      <DataType>varchar(45)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <key id="273" parent="234" name="PRIMARY">

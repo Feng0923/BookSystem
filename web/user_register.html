@@ -1,15 +1,8 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Administrator
-  Date: 2018/9/12/012
-  Time: 12:17
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <title>注册</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <script src="boostrap/bootstrap.min.js"></script>
     <link rel="stylesheet" href="boostrap/bootstrap.min.css">
     <script src="jquery-3.3.1.min.js"></script>
@@ -82,7 +75,7 @@
     <p id="msg_pwd"  class="col-md-offset-2" ></p>
     <div class="form-group ">
         <div class="col-xs-6 col-md-offset-2">
-            <label class="  text-right " style="padding:12px 12px">已有账号,返回<a href="user_login.jsp" >登录</a></label>
+            <label class="  text-right " style="padding:12px 12px">已有账号,返回<a href="user_login.html" >登录</a></label>
         </div>
         <div class="col-xs-2" >
             <button onclick="submitForm()" class="btn btn-default text-left  " id="btn_login" >注册</button>
@@ -131,7 +124,7 @@
             },
             success:function (result) {
                 if (result.trim() == "true".trim()){
-                    window.location.href = "/user_login.jsp";
+                    window.location.href = "/user_login.html";
                 }else if (result.trim() == "false".trim()){
                     $("#warning").text("该账号已注册!");
                     $("#warning").fadeIn("fast");

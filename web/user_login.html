@@ -1,15 +1,8 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Administrator
-  Date: 2018/9/12/012
-  Time: 11:25
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <title>用户登录</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <script src="boostrap/bootstrap.min.js"></script>
     <link rel="stylesheet" href="boostrap/bootstrap.min.css">
     <script src="jquery-3.3.1.min.js"></script>
@@ -36,7 +29,7 @@
             <p id="msg_pwd"  class="col-md-offset-2" ></p>
             <div class="form-group ">
                 <div class="  ">
-                    <label class=" text-right  col-xs-4" style="padding-top: 10px" ><a href="user_register.jsp" >新用户注册</a></label>
+                    <label class=" text-right  col-xs-4" style="padding-top: 10px" ><a href="user_register.html" >新用户注册</a></label>
                 </div>
                 <div class="col-xs-1 col-lg-offset-1 " >
                     <button onclick="submitForm()" class="btn btn-default text-left  "  id="btn_login">登录</button>
@@ -91,11 +84,11 @@
                         $("#warning").fadeOut(3000);
                     }else if(result == "admin"){
                         document.cookie = "admin_id = "+id+";path = '/'";
-                        window.location.href = "admin_bookList.jsp";
+                        window.location.href = "admin_bookList.html";
                     }else{
                         //
                         document.cookie = "user_id="+id+" ;path='/'";
-                        window.location.href = "user_search.jsp";
+                        window.location.href = "user_search.html";
                         return false;
                     }
                 },
